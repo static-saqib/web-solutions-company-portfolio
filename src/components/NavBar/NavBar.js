@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
+import logo from "./logo.jpg"
 
 export default function NavBar() {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -16,7 +17,7 @@ export default function NavBar() {
           <Link to="home" spy={true} smooth={true} offset={-100} duration={500}>
             <img
               className="lg:cursor-pointer h-12 ml-10"
-              src="http://www.edorotechnologies.com/upload-image/Logo/LLPedorosmall.png"
+              src={logo}
               alt="Logo"
             />
           </Link>

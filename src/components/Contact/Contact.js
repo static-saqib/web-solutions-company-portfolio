@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <>
       <section id="contact">
-      <h1 className="text-black text-3xl font-bold my-14">REQUEST A QUOTE</h1>
+      <h1 className="text-black text-3xl font-bold my-14 underline">REQUEST A QUOTE</h1>
         <div className="py-8 lg:py-15 px-4 mx-auto max-w-screen-md">
           <div className="bg-indigo-950 shadow-black shadow-2xl text-center rounded-lg lg:w-auto">
             <div className="p-6">
