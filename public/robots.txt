@@ -1,3 +1,166 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+
+
+ import React, { useState } from 'react';
+import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+//import { RxDotFilled } from 'react-icons/rx';
+
+function Slide() {
+  const slides = [
+    {
+      url: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2620&q=80',
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1661961112951-f2bfd1f253ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80',
+    },
+
+    {
+      url: 'https://images.unsplash.com/photo-1512756290469-ec264b7fbf87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2253&q=80',
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80',
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  // const goToSlide = (slideIndex) => {
+  //   setCurrentIndex(slideIndex);
+  // };
+
+  return (
+    <div className='max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group'>
+      <div
+        style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+        className='w-full h-full rounded-2xl bg-center bg-cover duration-500'
+      ></div>
+      {/* Left Arrow */}
+      <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+        <BsChevronCompactLeft onClick={prevSlide} size={30} />
+      </div>
+      {/* Right Arrow */}
+      <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+        <BsChevronCompactRight onClick={nextSlide} size={30} />
+      </div>
+      {/* <div className='flex top-4 justify-center py-2'>
+        {slides.map((slide, slideIndex) => (
+          <div
+            key={slideIndex}
+            onClick={() => goToSlide(slideIndex)}
+            className='text-2xl cursor-pointer'
+          >
+            <RxDotFilled />
+          </div>
+        ))}
+      </div> */}
+    </div>
+  );
+}
+
+export default Slide;
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React from 'react'
+
+export default function Services() {
+    return (
+        <>
+                <div className="grid-cols-1 lg:grid-cols-4">
+                    <div className="block justify-around space-y-10 space-x-0 mt-32 lg:flex lg:space-x-10 lg:mr-4 lg:ml-4 lg:space-y-0">
+                        <div className="w-screen bg-gradient-to-tr from-violet-700 to-fuchsia-400 shadow-black shadow-2xl text-center rounded-lg lg:w-auto">
+                            <h1 className='mt-3 p-4 text-white text-8xl'><i class="fa-brands fa-js"></i></h1>
+                            <p className='p-5 text-white'>Web Solutions</p>
+                            <p className='p-5 text-white'>We analyze, design, develop and implement static as well as dynamic websites with latest technologies like HTML5, Responsive Design, Jquery etc.</p>
+                            <a href="https://github.com/CoderMungan" target='_blank' rel="noopener noreferrer"><button type='button' className="inline-block mb-10 lg:mb-10 rounded-full shadow-2xl bg-violet-700 px-6 pb-2 pt-2.5 text-lg text-white transition duration-200 ease-in hover:bg-violet-950">Projelerime Bakabilirsiniz</button></a>
+                        </div>
+                        <div className="w-screen bg-gradient-to-tr from-violet-700 to-fuchsia-400 shadow-black shadow-2xl text-center rounded-lg lg:w-auto">
+                            <h1 className='mt-3 p-4 text-white text-8xl'><i class="fa-brands fa-python"></i></h1>
+                            <p className='p-5 text-white'>Python ile veri analizi, yapay zeka ve web programlaması gibi farklı alanlarda projeler geliştiriyorum. Basit ve temiz kodlama prensiplerine öncelik veriyorum.</p>
+                            <p className='p-5 text-white'>Django kütüphanesiyle uygulamaların Back-End tarafını yazıyorum.</p>
+                            <a href="https://github.com/CoderMungan" target='_blank' rel="noopener noreferrer"><button type='button' className="inline-block mb-10 lg:mb-10 rounded-full shadow-2xl bg-violet-700 px-6 pb-2 pt-2.5 text-lg text-white transition duration-200 ease-in hover:bg-violet-950">Projelerime Bakabilirsiniz</button></a>
+                        </div>
+                        <div className="w-screen bg-gradient-to-tr from-violet-700 to-fuchsia-400 shadow-black shadow-2xl text-center rounded-lg lg:w-auto">
+                            <h1 className='mt-3 p-4 text-white text-8xl'><i class="fa-brands fa-html5"></i></h1>
+                            <p className='p-5 text-white'>HTML5 ile modern ve semantik web sayfaları oluşturuyorum. Kullanıcı dostu arayüzler tasarlamak için en son web standartlarını takip ediyorum.</p>
+                            <p className='p-5 text-white'>Tailwind, Bootstrap Teknolojilerine hakimim. Bu web sitesi Tailwind ile stilize edilmiştir.</p>
+                            <a href="https://github.com/CoderMungan" target='_blank' rel="noopener noreferrer"><button type='button' className="inline-block mb-10 lg:mb-10 rounded-full shadow-2xl bg-violet-700 px-6 pb-2 pt-2.5 text-lg text-white transition duration-200 ease-in hover:bg-violet-950">Projelerime Bakabilirsiniz</button></a>
+                        </div>
+                    </div>
+                </div>
+        </>
+    )
+}
+
+
+ <div className=" w-4/6 m-auto">
+      <div className="border border-blue-500 text-center py-6 shadow-lg">
+        <h3>1. Requirement Gathering</h3>
+        <p>
+          We follow the first and foremost priority of gathering requirements,
+          resources, and information to begin our project.
+        </p>
+      </div>
+      <div className="h-full border border-black border-b-2 border-yellow-400 text-center shadow-md relative top-[-20px] py-6">
+        <h3> 2. UI/UX Design</h3>
+        <p>
+          We create catchy and charming designs with the latest tools of
+          designing to make it a best user-friendly experience..
+        </p>
+      </div>
+      <div className="h-full border border-black border-b-2 border-teal-500 text-center shadow-md py-6">
+        <h3>3. Prototype</h3>
+        <p>
+          After designing, you will get your prototype, which will be sent ahead
+          for the development process for the product.
+        </p>
+      </div>
+      <div className="h-full border border-black border-b-2 border-teal-500 text-center shadow-md py-6">
+        <h3>4. Development</h3>
+        <p>
+          Development of mobile application/web/blockchain started using latest
+          tools and technologies with transparency.
+        </p>
+      </div>
+      <div className="h-full border border-black border-b-2 border-teal-500 text-center shadow-md py-6">
+        <h3>5. Quality Assurance</h3>
+        <p>
+          Hyperlink values quality and provides 100% bug free application with
+          no compromisation in it.
+        </p>
+      </div>
+      <div className="h-full border border-black border-b-2 border-teal-500 text-center shadow-md py-6">
+        <h3>6. Support & Maintenance</h3>
+        <p>
+          Our company offers you all support and the team is always ready to
+          answer every query after deployment.
+        </p>
+      </div>
+    </div>
